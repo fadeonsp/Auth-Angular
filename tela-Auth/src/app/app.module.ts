@@ -14,6 +14,8 @@ import { CreateAccountComponent } from './account/create-account/create-account.
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
 import { HomeComponent } from './layout/home/home.component';
 
+import { httpInterceptorProviders } from './http-interceptors/index';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,12 +28,15 @@ import { HomeComponent } from './layout/home/home.component';
     HomeComponent
   ],
   imports: [
-    BrowserModule,
+
+  BrowserModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    httpInterceptorProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
